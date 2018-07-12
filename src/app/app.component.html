@@ -3,7 +3,28 @@
 </h1>
 
 <div *ngIf="dataIsAvailable">
-  <div *ngFor="let post of posts">
-    {{ post | json}}
-  </div>
+
+  <ul *ngFor="let post of posts">
+    <li>
+      <app-post-component
+        [post]=post
+        (loadComments)="loadComments($event)">
+      </app-post-component>
+      <div *ngIf="comments.has(post.id)">
+        <ul *ngFor="let comment of comments.get(post.id)">
+
+          <!--
+            Normally I would have `app-post-component` render its own comments,
+            but  I'm doing this here because the code challenge specified to use
+            an @Output decorator. Is this an Angular best practice?
+          -->
+          <app-comment-component
+            [comment]=comment>
+          </app-comment-component>
+
+        </ul>
+      </div>
+
+    </li>
+  </ul>
 </div>
