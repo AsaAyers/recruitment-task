@@ -1,0 +1,12 @@
+/*
+I don't have a good idea of what styles to add, so hopefully a hover to
+show/hide the ID is sufficient to show I know how CSS works.
+*/
+
+.post-comment-component--id {
+  display: none;
+}
+
+.post-comment-component:hover .post-comment-component--id {
+  display: inline;
+}

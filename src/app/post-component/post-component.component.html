@@ -1,5 +1,6 @@
-{{ post.author }}: {{ post.title }} ({{ post.id }})
-
-<a href="#" (click)="onClick()">
-  Load comments
-</a>
+<div class="post-comment-component">
+  <a href="#" (click)="onClick()">
+    {{ post.author }}: {{ post.title }}
+  </a>
+  <div class="post-comment-component--id">(id: {{ post.id }})</div>
+</div>
